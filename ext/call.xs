@@ -226,6 +226,7 @@ startBatch(Grpc::XS::Call self, ...)
               &message;
           break;
         case GRPC_OP_RECV_STATUS_ON_CLIENT:
+          ops[op_num].data.recv_status_on_client.error_string = NULL;
           ops[op_num].data.recv_status_on_client.trailing_metadata =
               &recv_trailing_metadata;
           ops[op_num].data.recv_status_on_client.status = &status;
