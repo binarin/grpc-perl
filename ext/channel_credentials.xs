@@ -45,7 +45,7 @@ createSsl(const char *class, ...)
 
     ctx->wrapped = grpc_ssl_credentials_create(
         pem_root_certs,
-        pem_key_cert_pair.private_key == NULL ? NULL : &pem_key_cert_pair, NULL);
+        pem_key_cert_pair.private_key == NULL ? NULL : &pem_key_cert_pair, NULL, NULL);
 
     RETVAL = ctx;
   OUTPUT: RETVAL
